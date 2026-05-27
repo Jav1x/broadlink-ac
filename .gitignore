@@ -1,0 +1,11 @@
+.devcontainer
+.vs
+*.pyproj
+.pytest_cache/
+*.pyproj.user
+*.sln
+/env
+/venv
+*.zip
+__pycache__/
+

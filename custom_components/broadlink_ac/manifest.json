@@ -1,0 +1,14 @@
+{
+  "domain": "broadlink_ac",
+  "name": "Broadlink AC",
+  "codeowners": ["@jav1x"],
+  "config_flow": true,
+  "dependencies": [],
+  "documentation": "https://github.com/jav1x/broadlink-ac",
+  "integration_type": "device",
+  "iot_class": "local_polling",
+  "parallel_updates": 1,
+  "quality_scale": "bronze",
+  "requirements": ["cryptography>=42.0.0"],
+  "version": "1.0.0"
+}

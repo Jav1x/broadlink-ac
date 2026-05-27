@@ -1,0 +1,183 @@
+{
+  "title": "Broadlink AC",
+  "config": {
+    "abort": {
+      "already_configured": "All selected devices are already configured.",
+      "no_devices_found": "No devices found on the network",
+      "single_instance_allowed": "Already configured. Only a single configuration possible."
+    },
+    "error": {
+      "invalid_host": "Invalid host address",
+      "invalid_mac": "Invalid MAC address format",
+      "mac_not_found": "Could not discover the MAC address for this IP address. Enter the MAC address manually if discovery is blocked.",
+      "no_device_selected": "Select a discovered device or add at least one manual device.",
+      "too_many_manual_devices": "Too many manual devices.",
+      "cannot_connect": "Could not connect to the device. Check the IP address and network."
+    },
+    "step": {
+      "confirm": {
+        "description": "Do you want to start setup?"
+      },
+      "user": {
+        "title": "Broadlink AC",
+        "description": "Select discovered Broadlink AC devices, or add devices manually below.{manual_devices_list}\n{failed_devices}",
+        "data": {
+          "discovered_devices": "Discovered devices",
+          "host": "IP address",
+          "mac": "MAC address (optional)",
+          "add_manual_device": "Add a device manually"
+        },
+        "data_description": {
+          "discovered_devices": "Air conditioners found on the local network.",
+          "host": "IPv4 address, for example 192.168.1.100.",
+          "mac": "MAC address with or without separators, for example 34:ea:34:f7:58:66.",
+          "add_manual_device": "Open the form to enter IP and MAC address."
+        },
+        "sections": {
+          "manual_devices_section": {
+            "name": "Add manually",
+            "description": "Use this if your air conditioner is not in the list above.",
+            "data": {
+              "add_manual_device": "Add a device manually"
+            },
+            "data_description": {
+              "add_manual_device": "Open the form to enter IP and MAC address."
+            }
+          }
+        }
+      },
+      "manual_device": {
+        "title": "Add device manually",
+        "description": "Enter the device IP address. The MAC address is optional if discovery is available on your network.",
+        "data": {
+          "host": "IP address",
+          "mac": "MAC address (optional)"
+        },
+        "data_description": {
+          "host": "IPv4 address, for example 192.168.1.100.",
+          "mac": "MAC address with or without separators, for example 34:ea:34:f7:58:66."
+        }
+      },
+      "manual_device_menu": {
+        "title": "Device added",
+        "description": "The device was saved. You can add another device or continue setup.",
+        "menu_options": {
+          "add_another": "Add another device",
+          "continue_setup": "Continue setup"
+        }
+      },
+      "connection_result": {
+        "title": "Connection test",
+        "description": "The following devices responded:\n{successful_devices}\n\nCould not connect to:\n{failed_devices}\n\nOnly reachable devices will be added."
+      },
+      "area": {
+        "title": "Assign areas",
+        "description": "Choose the area for each air conditioner.",
+        "data": {
+          "area_id": "Area",
+          "device_areas": "Device areas"
+        },
+        "data_description": {
+          "area_id": "The area where this air conditioner is located.",
+          "device_areas": "Assign an area to each device."
+        }
+      }
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Add Broadlink AC devices",
+        "description": "Select discovered Broadlink AC devices, or add devices manually below.{manual_devices_list}\n{failed_devices}",
+        "data": {
+          "discovered_devices": "Discovered devices",
+          "host": "IP address",
+          "mac": "MAC address (optional)",
+          "add_manual_device": "Add a device manually"
+        },
+        "data_description": {
+          "discovered_devices": "Air conditioners found on the local network.",
+          "host": "IPv4 address, for example 192.168.1.100.",
+          "mac": "MAC address with or without separators, for example 34:ea:34:f7:58:66.",
+          "add_manual_device": "Open the form to enter IP and MAC address."
+        },
+        "sections": {
+          "manual_devices_section": {
+            "name": "Add manually",
+            "description": "Use this if your air conditioner is not in the list above.",
+            "data": {
+              "add_manual_device": "Add a device manually"
+            },
+            "data_description": {
+              "add_manual_device": "Open the form to enter IP and MAC address."
+            }
+          }
+        }
+      },
+      "manual_device": {
+        "title": "Add device manually",
+        "description": "Enter the device IP address. The MAC address is optional if discovery is available on your network.",
+        "data": {
+          "host": "IP address",
+          "mac": "MAC address (optional)"
+        },
+        "data_description": {
+          "host": "IPv4 address, for example 192.168.1.100.",
+          "mac": "MAC address with or without separators, for example 34:ea:34:f7:58:66."
+        }
+      },
+      "manual_device_menu": {
+        "title": "Device added",
+        "description": "The device was saved. You can add another device or continue setup.",
+        "menu_options": {
+          "add_another": "Add another device",
+          "continue_setup": "Continue setup"
+        }
+      },
+      "connection_result": {
+        "title": "Connection test",
+        "description": "The following devices responded:\n{successful_devices}\n\nCould not connect to:\n{failed_devices}\n\nOnly reachable devices will be added."
+      },
+      "area": {
+        "title": "Assign areas",
+        "description": "Choose the area for each new air conditioner.",
+        "data": {
+          "area_id": "Area",
+          "device_areas": "Device areas"
+        },
+        "data_description": {
+          "area_id": "The area where this air conditioner is located.",
+          "device_areas": "Assign an area to each device."
+        }
+      }
+    },
+    "error": {
+      "invalid_host": "Invalid host address",
+      "invalid_mac": "Invalid MAC address format",
+      "mac_not_found": "Could not discover the MAC address for this IP address. Enter the MAC address manually if discovery is blocked.",
+      "no_device_selected": "Select a discovered device or add at least one manual device.",
+      "too_many_manual_devices": "Too many manual devices.",
+      "cannot_connect": "Could not connect to the device. Check the IP address and network."
+    },
+    "abort": {
+      "already_configured": "All specified devices are already configured."
+    }
+  },
+  "selector": {
+    "object": {
+      "device_areas": {
+        "fields": {
+          "mac": "MAC address",
+          "area_id": "Area"
+        }
+      }
+    }
+  },
+  "entity": {
+    "switch": {
+      "display": {
+        "name": "Display"
+      }
+    }
+  }
+}
