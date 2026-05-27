@@ -1,0 +1,48 @@
+name: Release
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  release_zip:
+    name: Build and publish HACS zip
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set version from release tag
+        id: version
+        run: |
+          version="${{ github.event.release.tag_name }}"
+          version="${version#v}"
+          echo "version=${version}" >> "$GITHUB_OUTPUT"
+
+      - name: Update manifest version
+        run: |
+          python3 <<'PY'
+          import json
+          from pathlib import Path
+
+          version = "${{ steps.version.outputs.version }}"
+          manifest_path = Path("custom_components/broadlink_ac/manifest.json")
+          manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+          manifest["version"] = version
+          manifest_path.write_text(
+              json.dumps(manifest, indent=2, ensure_ascii=False) + "\n",
+              encoding="utf-8",
+          )
+          PY
+
+      - name: Create integration zip
+        run: |
+          cd custom_components/broadlink_ac
+          zip -r ../../broadlink_ac.zip ./ -x "**/__pycache__/*" "**/*.pyc"
+
+      - name: Upload zip to release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: broadlink_ac.zip

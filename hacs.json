@@ -1,5 +1,8 @@
 {
   "name": "Broadlink AC",
   "render_readme": false,
-  "homeassistant": "2024.1.0"
+  "homeassistant": "2024.1.0",
+  "zip_release": true,
+  "filename": "broadlink_ac.zip",
+  "hide_default_branch": true
 }
