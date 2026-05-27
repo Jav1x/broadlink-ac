@@ -6,7 +6,7 @@ rules:
       Integration exposes climate and switch entities only; no integration
       service actions are provided.
   appropriate-polling: done
-  brands: todo
+  brands: done
   common-modules: done
   config-flow-test-coverage: done
   config-flow: done

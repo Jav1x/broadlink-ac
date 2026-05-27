@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="docs/media/logo.png" alt="Broadlink AC" width="200">
+</p>
+
 # Broadlink AC
 
 Control Broadlink-based air conditioners directly from Home Assistant.
