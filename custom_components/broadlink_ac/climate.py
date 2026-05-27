@@ -62,6 +62,8 @@ class BroadlinkACClimate(BroadlinkACEntity, ClimateEntity):
         ClimateEntityFeature.TARGET_TEMPERATURE
         | ClimateEntityFeature.FAN_MODE
         | ClimateEntityFeature.SWING_MODE
+        | ClimateEntityFeature.TURN_ON
+        | ClimateEntityFeature.TURN_OFF
     )
     _attr_hvac_modes = SUPPORTED_HVAC_MODES
     _attr_fan_modes = SUPPORTED_FAN_MODES
@@ -107,6 +109,14 @@ class BroadlinkACClimate(BroadlinkACEntity, ClimateEntity):
             await self.coordinator.async_call(
                 self.coordinator.client.set_temperature, temperature
             )
+
+    async def async_turn_on(self) -> None:
+        """Turn the AC on."""
+        await self.coordinator.async_call(self.coordinator.client.switch_on)
+
+    async def async_turn_off(self) -> None:
+        """Turn the AC off."""
+        await self.coordinator.async_call(self.coordinator.client.switch_off)
 
     async def async_set_hvac_mode(self, hvac_mode: HVACMode) -> None:
         """Set the HVAC mode."""

@@ -232,9 +232,7 @@ class BroadlinkACClient(BroadlinkDeviceProtocol):
     def set_homekit_mode(self, status: str) -> dict[str, Any] | bool:
         """Set mode from a HomeKit-style mode string."""
         with self.operation_lock:
-            if type(status) is not str:
-                self.logger.debug("Status variable is not string %s", type(status))
-                return False
+            status = str(status)
 
             if status.lower() == "coolon":
                 mode = ACStatic.MODE.COOLING
@@ -260,9 +258,7 @@ class BroadlinkACClient(BroadlinkDeviceProtocol):
     def set_homeassistant_mode(self, status: str) -> dict[str, Any] | bool:
         """Set mode from a Home Assistant HVAC mode string."""
         with self.operation_lock:
-            if type(status) is not str:
-                self.logger.debug("Status variable is not string %s", type(status))
-                return False
+            status = str(status)
 
             if status.lower() == "cool":
                 mode = ACStatic.MODE.COOLING
